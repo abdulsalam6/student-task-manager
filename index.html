@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="تطبيق بسيط لتنظيم المهام الدراسية باستخدام HTML وCSS وJavaScript.">
+  <title>منظّم المهام الدراسية</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div class="hero-icon" aria-hidden="true">✓</div>
+      <p class="eyebrow">مشروع تطبيقي بسيط</p>
+      <h1>منظّم المهام الدراسية</h1>
+      <p class="subtitle">رتّب مهامك، تابع إنجازك، وابدأ يومك بخطة واضحة.</p>
+    </header>
+
+    <section class="stats" aria-label="ملخص المهام">
+      <article class="stat-card"><span class="stat-label">كل المهام</span><strong id="total-count">0</strong></article>
+      <article class="stat-card"><span class="stat-label">قيد التنفيذ</span><strong id="active-count">0</strong></article>
+      <article class="stat-card"><span class="stat-label">مكتملة</span><strong id="done-count">0</strong></article>
+    </section>
+
+    <section class="task-panel">
+      <h2>أضف مهمة جديدة</h2>
+      <form id="task-form" class="task-form">
+        <label class="sr-only" for="task-input">عنوان المهمة</label>
+        <input id="task-input" name="task" type="text" maxlength="90" placeholder="مثال: مراجعة محاضرة Git" autocomplete="off" required>
+        <button type="submit">إضافة المهمة</button>
+      </form>
+      <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+
+      <div class="list-heading">
+        <h2>قائمة المهام</h2>
+        <button id="clear-done" class="text-button" type="button">حذف المكتمل</button>
+      </div>
+
+      <ul id="task-list" class="task-list" aria-live="polite"></ul>
+      <p id="empty-state" class="empty-state">لا توجد مهام حالياً. أضف مهمتك الأولى!</p>
+    </section>
+
+    <footer>مشروع تعليمي باستخدام HTML وCSS وJavaScript</footer>
+  </main>
+</body>
+</html>
